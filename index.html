@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>LuaP</title>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@2/dist/zero-md.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/fengari-web@0.1.4/dist/fengari-web.min.js"></script>
+  <link href="style.css" rel="stylesheet">
+</head>
+
+<script src="main.lua" type="application/lua" async></script>
+
+<body style="margin: 0;">
+  <nav class="nav">
+    <img style="margin: 5px;" src="lua-logo.png" alt="lua-logo">
+    <h1 class="nav-text">
+      LuaP
+    </h1>
+  </nav>
+
+  <div class="flex-row">
+    <div class="sidebar">
+      <zero-md src="help.md">
+    </div>
+
+    <main class="main">
+      <div class="input-group">
+        <label for="lua-pattern" class="lable lable-bottom">lua pattern</label>
+        <input id="lua-pattern" class="input input-pattern" type="text">
+      </div>
+      <div class="input-group">
+        <label class="lable lable-top">text</label>
+        <div class="input-text-group">
+          <textarea id="text" class="input input-text input-text-trasperent"></textarea>
+          <div id="text-highligted" class="input-text text-highlighted">
+            hello world
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+</body>
+
+</html>
