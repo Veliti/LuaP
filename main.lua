@@ -14,9 +14,9 @@ local highlight_lines = function(text)
 	-- aa
 end
 
-local pattern = jsdoc:querySelector("#lua-pattern")
-local text = jsdoc:querySelector("#text")
-local text_highlighted = jsdoc:querySelector("#text-highligted")
+local pattern = jsdoc:querySelector("#input-pattern")
+local text = jsdoc:querySelector("#input-text")
+local text_highlighted = jsdoc:querySelector("#text-highlighted")
 
 local update = function()
 	text_highlighted.innerText = text.value

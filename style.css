@@ -21,55 +21,68 @@
   height: 100vh;
   border-right: 1px solid black;
 }
-.main {
+main {
   flex: 3;
   display: flex;
   flex-direction: column;
   gap: 20px;
   padding: 15px;
 }
-.input-group {
+/* update to nesting when its fully supported */
+.lua-pattern {
   background-color: white;
   width: 100%;
   position: relative;
-  display: inline-block;
 }
-.lable {
-  color: black;
+.lua-pattern label {
   background-color: inherit;
   font-size: 15px;
   position: absolute;
   padding: 0 2px;
-  left: 11px;
+  left: 14px;
+  top: calc(100% - 0.7em);
 }
-.lable-top {
-  top: calc(0% - 0.7em);
-}
-.lable-bottom {
-  top: calc(100% - 0.8em)
-}
-.input {
-  width: 100%;
+.lua-pattern input {
+  width: inherit;
   padding: 8px 13px;
   border: 2px solid black;
   border-radius: 10px;
 }
-.input-pattern {
+.lua-text{
+  background-color: white;
+  width: 100%;
+  position: relative;
+}
+.lua-text label {
+  background-color: white;
+  font-size: 15px;
+  position: absolute;
+  padding: 0 2px;
+  left: 14px;
+  top: calc(0% - 0.5em);
+}
+.lua-text-highlighted {
+  position: relative;
+  width: inherit;
+  border: 2px solid black;
+  border-radius: 10px;
   font-size: 20px;
 }
-.input-text-group {
+.lua-text-highlighted textarea {
+  width:inherit;
+  background-color: transparent;
+  border: 2px solid transparent;
+  color: red;
+  opacity: 15%;
+  padding: 8px 13px;
+  font-family: monospace;
+  font-size: 1em;
 }
-.input-text {
+.lua-text-highlighted section {
   position: absolute;
-  font-size: 15px;
-  height: 400px;
-  resize: vertical;
-}
-.input-text-trasperent {
-  z-index: 2;
-  color: transparent;
-  background: transparent;
-}
-.text-highligted {
-  z-index: 1;
+  top: 0px;
+  left: 0;
+  padding: 8px 13px;
+  font-family: monospace;
+  font-size: 1em;
 }
