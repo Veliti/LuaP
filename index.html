@@ -11,6 +11,7 @@
   <link href="style.css" rel="stylesheet">
 </head>
 
+<script src="main.lua" type="application/lua" async></script>
 
 <body style="margin: 0;">
   <nav class="nav">
@@ -26,9 +27,8 @@
     </div>
 
     <main>
-      <script src="main.lua" type="application/lua" async></script>
       <div class="lua-pattern">
-        <input id="input-pattern">%w+</input>
+        <input id="input-pattern" value="%w+"></input>
         <label for="input-pattern">lua pattern</label>
       </div>
       <div class="lua-text">
