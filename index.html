@@ -11,7 +11,6 @@
   <link href="style.css" rel="stylesheet">
 </head>
 
-<script src="main.lua" type="application/lua" async></script>
 
 <body style="margin: 0;">
   <nav class="nav">
@@ -27,22 +26,22 @@
     </div>
 
     <main>
+      <script src="main.lua" type="application/lua" async></script>
       <div class="lua-pattern">
         <input id="input-pattern"></input>
         <label for="input-pattern">lua pattern</label>
       </div>
       <div class="lua-text">
         <div class="lua-text-highlighted">
-          <textarea id="input-text"></textarea>
-          <section id="text-highlighted">
-            hello2
-          </section>
+          <textarea id="input-text">hello</textarea>
+          <section id="text-highlighted">Hello world</section>
           <label for="input-text">input</label>
         </div>
+        <small style="color: gray;">* correct highlighting of inner captures not guaranteed
+          😂</small>
       </div>
     </main>
   </div>
-
 </body>
 
 </html>

@@ -66,23 +66,39 @@ main {
   width: inherit;
   border: 2px solid black;
   border-radius: 10px;
-  font-size: 20px;
+}
+.lua-text-highlighted textarea, section {
+  font-size: 15px;
+  font-family: sans-serif;
+  padding: 10px 10px;
+  margin: 0;
+  border: 0;
 }
 .lua-text-highlighted textarea {
   width:inherit;
+  height: 350px;
+  resize: vertical;
+  border-radius: inherit;
+  -webkit-text-fill-color: transparent;
   background-color: transparent;
-  border: 2px solid transparent;
-  color: red;
-  opacity: 15%;
-  padding: 8px 13px;
-  font-family: monospace;
-  font-size: 1em;
+  z-index: 1;
 }
 .lua-text-highlighted section {
   position: absolute;
   top: 0px;
   left: 0;
-  padding: 8px 13px;
-  font-family: monospace;
-  font-size: 1em;
+  z-index: 0;
+}
+.highlight-primary {
+  border-width: 0 1px 0 1px;
+  border-style: solid;
+  border-color: #0000FF;
+  background-color: #00FFFF40;
+}
+.highlight-secondary {
+  text-decoration: underline dotted orange 2px;
+  background-color: transparent;
+}
+.highlight-error {
+  color: red;
 }
