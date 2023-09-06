@@ -79,20 +79,22 @@ main {
   height: 350px;
   resize: vertical;
   border-radius: inherit;
-  -webkit-text-fill-color: transparent;
+  opacity: 20%;
+  caret-color: black;
   background-color: transparent;
   z-index: 1;
 }
 .lua-text-highlighted section {
   position: absolute;
+  width: 100%;
   top: 0px;
   left: 0;
   z-index: 0;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+  user-select: none;
 }
 .highlight-primary {
-  border-width: 0 1px 0 1px;
-  border-style: solid;
-  border-color: #0000FF;
   background-color: #00FFFF40;
 }
 .highlight-secondary {

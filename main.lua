@@ -34,11 +34,12 @@ local highlight_lines = function(text, pattern)
 end
 
 local update = function()
+	print(input_text.value)
 	local success, hl = pcall(highlight_lines, input_text.value, input_pattern.value)
 	if success then
 		text_highlighted.innerHTML = hl
 	else
-		text_highlighted.innerHTML = input_text.value
+		text_highlighted.innerText = input_text.value
 	end
 end
 
