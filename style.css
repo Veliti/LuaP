@@ -20,6 +20,7 @@
   flex: 1;
   height: 100vh;
   border-right: 1px solid black;
+  overflow-x: scroll;
 }
 main {
   flex: 3;
@@ -76,21 +77,23 @@ main {
 }
 .lua-text-highlighted textarea {
   width:inherit;
-  height: 350px;
+  min-height: 350px;
   resize: vertical;
   border-radius: inherit;
   opacity: 20%;
   caret-color: black;
   background-color: transparent;
-  z-index: 1;
+  z-index: 2;
 }
 .lua-text-highlighted section {
   position: absolute;
   width: 100%;
+  height: 100%;
   top: 0px;
   left: 0;
   z-index: 0;
-  overflow-wrap: break-word;
+  overflow: scroll;
+  word-wrap: break-word;
   white-space: pre-wrap;
   user-select: none;
 }

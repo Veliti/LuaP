@@ -34,7 +34,6 @@ local highlight_lines = function(text, pattern)
 end
 
 local update = function()
-	print(input_text.value)
 	local success, hl = pcall(highlight_lines, input_text.value, input_pattern.value)
 	if success then
 		text_highlighted.innerHTML = hl
@@ -43,12 +42,13 @@ local update = function()
 	end
 end
 
-input_pattern:addEventListener("input", function(element, event)
-	update()
-end)
+local update_scroll = function()
+	text_highlighted.scrollTop = input_text.scrollTop
+end
 
-input_text:addEventListener("input", function(element, event)
-	update()
-end)
+input_pattern:addEventListener("input", update)
+
+input_text:addEventListener("selectionchange", update)
+input_text:addEventListener("scroll", update_scroll)
 
 update()
