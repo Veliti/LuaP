@@ -4,12 +4,6 @@ local input_pattern = jsdoc:querySelector("#input-pattern")
 local input_text = jsdoc:querySelector("#input-text")
 local text_highlighted = jsdoc:querySelector("#text-highlighted")
 
-local inspect = function(t)
-	for key, value in ipairs(t) do
-		print(key, " -> ", value)
-	end
-end
-
 local mark_wrap = function(s, classes)
 	return string.format('<mark class="%s">%s</mark>', classes, s)
 end
@@ -17,7 +11,7 @@ end
 ---@param text string
 ---@param pattern string
 local highlight_lines = function(text, pattern)
-	-- lua pattern moment need to wrap pattern in capture else it stop capturing xD
+	-- lua pattern moment: need to wrap pattern in capture else it stop capturing itself
 	pattern = "(" .. pattern .. ")"
 	local result = text:gsub(pattern, function(...)
 		local captures = { ... }
@@ -47,7 +41,6 @@ local update_scroll = function()
 end
 
 input_pattern:addEventListener("input", update)
-
 input_text:addEventListener("selectionchange", update)
 input_text:addEventListener("scroll", update_scroll)
 
