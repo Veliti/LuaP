@@ -11,20 +11,29 @@ end
 ---@param text string
 ---@param pattern string
 local highlight_lines = function(text, pattern)
-	-- lua pattern moment: need to wrap pattern in capture else it stop capturing itself
-	pattern = "(" .. pattern .. ")"
-	local result = text:gsub(pattern, function(...)
-		local captures = { ... }
-		---@type string
-		local insertion = mark_wrap(captures[1], "highlight-primary")
-		for index, value in ipairs(captures) do
-			if index ~= 1 then
-				insertion = insertion:gsub(value, mark_wrap(value, "highlight-secondary"), 1)
-			end
+	local needle = 1
+	local matches = {}
+	while true do
+		local find_res = { text:find(pattern, needle) }
+		local match_start, match_end = find_res[1], find_res[2]
+		print(#find_res, match_start, match_end)
+		if #find_res == 0 or match_start > match_end then
+			break
 		end
-		return insertion
-	end)
-	return result
+
+		local captures = { table.unpack(find_res, 3, #find_res) }
+		local match = text:sub(match_start, match_end)
+		for _, value in ipairs(captures) do
+			match = match:gsub(value, mark_wrap(value, "highlight-secondary"), 1)
+		end
+
+		table.insert(matches, mark_wrap(match, "highlight-primary"))
+		text = text:gsub(text:sub(match_start, match_end), "%%s", 1)
+		needle = match_start + 2
+	end
+
+	print(text)
+	return text:format(table.unpack(matches))
 end
 
 local update = function()
@@ -32,6 +41,7 @@ local update = function()
 	if success then
 		text_highlighted.innerHTML = hl
 	else
+		print(hl)
 		text_highlighted.innerText = input_text.value
 	end
 end
